@@ -4,8 +4,8 @@
   "description": "Node.js wrapper for the 𝚫 now API",
   "main": "./dist/now.js",
   "scripts": {
-    "build": "babel -d ./dist src",
-    "prepublish": "npm run build && npm run gen-doc",
+    "build": "babel -d ./dist src && cp src/now.js.flow dist",
+    "prepublish": "npm run build",
     "gen-doc": "jsdoc2md --src src/now.js -t README.hbs > README.md",
     "test": "xo && mocha test/index.js --compilers js:babel-register"
   },

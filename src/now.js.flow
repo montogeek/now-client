@@ -1,0 +1,21 @@
+// @flow
+
+declare class Now {
+  constructor(token: string): this;
+  (token: string): this;
+  getDeployments(callback: Function): Promise<any>;
+  getDeployment(id: string, callback: Function): Promise<any>;
+  createDeployment(body: string, callback: Function): Promise<any>;
+  deleteDeployment(id: string, callback: Function): Promise<any>;
+  getFiles(id: string, callback: Function): Promise<any>;
+  getFile(id: string, fileId: string, callback: Function): Promise<any>;
+  getAliases(id: string, callback: Function): Promise<any>;
+  createAlias(id: string, alias: string, callback: Function): Promise<any>;
+  deleteAlias(id: string, callback: Function): Promise<any>;
+  getSecrets(callback: Function): Promise<any>;
+  createSecret(name: string, alias: string, callback: Function): Promise<any>;
+  renameSecret(id: string, name: string, callback: Function): Promise<any>;
+  deleteSecret(id: string, callback: Function): Promise<any>;
+}
+
+declare module.exports: Now;
