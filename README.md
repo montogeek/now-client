@@ -12,7 +12,30 @@ When no token is given, it will use the one contained in your `~/.now.json` file
 $ npm install --save now-client
 ```
 
-## Example
+## Examples
+
+Here are a few snippets on how to use this package in your project:
+
+### ES2015
+
+```js
+import nowClient from 'now-client'
+
+const now = nowClient('YOUR TOKEN')
+
+let deployments
+
+try {
+  deployments = await now.getDeployments()
+} catch (err) {
+  console.error(err)
+}
+
+console.log(deployments)
+```
+
+### Older ES
+
 
 ```js
 const nowClient = require('now-client')
@@ -231,7 +254,7 @@ Changes the name of the given secret and returns its ID and name.
 Deletes a secret and returns its ID.
 
 **Kind**: instance method of <code>[Now](#Now)</code>  
-**See**: https://zeit.co/api#delete-user-aliases  
+**See**: https://zeit.co/api#delete-now-secrets  
 
 | Param | Type | Description |
 | --- | --- | --- |
