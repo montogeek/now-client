@@ -34,7 +34,7 @@ declare class Now {
   getDeployment(id: string): Promise<Deployment>;
   createDeployment(body: string): Promise<any>;
   deleteDeployment(id: string): Promise<any>;
-  getFiles(id: string, ): Promise<File[]>;
+  getFiles(id: string): Promise<File[]>;
   getFile(id: string, fileId: string): Promise<any>;
   getAliases(id: string): Promise<Alias[]>;
   createAlias(id: string, alias: string): Promise<any>;
