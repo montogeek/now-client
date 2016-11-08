@@ -11,7 +11,7 @@ type File = {
   type: string,
   name: string,
   uid: string,
-  children: File
+  children: File[]
 }
 
 type Alias = {
@@ -28,8 +28,6 @@ type Secret = {
 }
 
 declare class Now {
-  constructor(token: string): this;
-  (token: string): this;
   getDeployments(): Promise<Deployment[]>;
   getDeployment(id: string): Promise<Deployment>;
   createDeployment(body: string): Promise<any>;
@@ -45,4 +43,4 @@ declare class Now {
   deleteSecret(id: string): Promise<{ uid: string }>;
 }
 
-declare module.exports: Now;
+declare module.exports: (token: string) => Now;
