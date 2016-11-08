@@ -2,7 +2,7 @@ import gulp from 'gulp'
 import babel from 'gulp-babel'
 import cache from 'gulp-cached'
 
-const flow = 'src/index.js.flow';
+const flow = 'src/index.js.flow'
 
 const paths = {
   src: 'src/**/*'
